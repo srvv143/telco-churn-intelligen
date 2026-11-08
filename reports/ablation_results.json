@@ -1,0 +1,136 @@
+{
+  "protocol": "3x5 repeated stratified CV on the training split; paired differences vs. reference",
+  "rows": [
+    {
+      "experiment": "reference",
+      "variant": "default",
+      "model": "Logistic Regression",
+      "roc_auc_mean": 0.850578360934992,
+      "roc_auc_std": 0.012221907970989671,
+      "brier_mean": 0.1328033370695534,
+      "ece_mean": 0.02861087644254358,
+      "delta_auc": null,
+      "delta_auc_se": null,
+      "delta_brier": null
+    },
+    {
+      "experiment": "A1 feature engineering",
+      "variant": "raw inputs only",
+      "model": "Logistic Regression",
+      "roc_auc_mean": 0.8454942164525167,
+      "roc_auc_std": 0.011931434359889494,
+      "brier_mean": 0.13524251583345684,
+      "ece_mean": 0.026286998622268784,
+      "delta_auc": -0.005084144482475391,
+      "delta_auc_se": 0.0008729328615962174,
+      "delta_brier": 0.002439178763903414
+    },
+    {
+      "experiment": "A2 class imbalance",
+      "variant": "class_weight=balanced",
+      "model": "Logistic Regression",
+      "roc_auc_mean": 0.8506300565538295,
+      "roc_auc_std": 0.012189960481119167,
+      "brier_mean": 0.16087451258979943,
+      "ece_mean": 0.14651375207753492,
+      "delta_auc": 5.169561883763644e-05,
+      "delta_auc_se": 9.324335574004781e-05,
+      "delta_brier": 0.028071175520246034
+    },
+    {
+      "experiment": "A2 class imbalance",
+      "variant": "SMOTE (in-fold)",
+      "model": "Logistic Regression",
+      "roc_auc_mean": 0.849499090019179,
+      "roc_auc_std": 0.012577986866587319,
+      "brier_mean": 0.15933383265579362,
+      "ece_mean": 0.13707265888347614,
+      "delta_auc": -0.0010792709158130946,
+      "delta_auc_se": 0.0003698175428460845,
+      "delta_brier": 0.026530495586240172
+    },
+    {
+      "experiment": "A3 gender input",
+      "variant": "gender included",
+      "model": "Logistic Regression",
+      "roc_auc_mean": 0.8502727309882673,
+      "roc_auc_std": 0.012231336500854012,
+      "brier_mean": 0.1329554940134733,
+      "ece_mean": 0.02767377852652014,
+      "delta_auc": -0.0003056299467245838,
+      "delta_auc_se": 6.765930494126417e-05,
+      "delta_brier": 0.00015215694391988073
+    },
+    {
+      "experiment": "reference",
+      "variant": "default",
+      "model": "LightGBM",
+      "roc_auc_mean": 0.8490528094301268,
+      "roc_auc_std": 0.012770133764308201,
+      "brier_mean": 0.1340963724315561,
+      "ece_mean": 0.029714204832547653,
+      "delta_auc": null,
+      "delta_auc_se": null,
+      "delta_brier": null
+    },
+    {
+      "experiment": "A1 feature engineering",
+      "variant": "raw inputs only",
+      "model": "LightGBM",
+      "roc_auc_mean": 0.8493972106025605,
+      "roc_auc_std": 0.012549984594281922,
+      "brier_mean": 0.1338821302732089,
+      "ece_mean": 0.0285458724308158,
+      "delta_auc": 0.0003444011724333655,
+      "delta_auc_se": 0.00034885005842219844,
+      "delta_brier": -0.0002142421583472054
+    },
+    {
+      "experiment": "A2 class imbalance",
+      "variant": "class_weight=balanced",
+      "model": "LightGBM",
+      "roc_auc_mean": 0.8488812605582858,
+      "roc_auc_std": 0.012728825217749411,
+      "brier_mean": 0.16138410597343028,
+      "ece_mean": 0.14654122737735667,
+      "delta_auc": -0.0001715488718412317,
+      "delta_auc_se": 0.0002037204569264786,
+      "delta_brier": 0.027287733541874137
+    },
+    {
+      "experiment": "A2 class imbalance",
+      "variant": "SMOTE (in-fold)",
+      "model": "LightGBM",
+      "roc_auc_mean": 0.8461751838979068,
+      "roc_auc_std": 0.011850055500477078,
+      "brier_mean": 0.1486480664425982,
+      "ece_mean": 0.10164521801882577,
+      "delta_auc": -0.002877625532220122,
+      "delta_auc_se": 0.0008463654343133207,
+      "delta_brier": 0.014551694011042086
+    },
+    {
+      "experiment": "A3 gender input",
+      "variant": "gender included",
+      "model": "LightGBM",
+      "roc_auc_mean": 0.8493704862430046,
+      "roc_auc_std": 0.012575911969731077,
+      "brier_mean": 0.1339583959840174,
+      "ece_mean": 0.028730407592163373,
+      "delta_auc": 0.00031767681287776887,
+      "delta_auc_se": 0.00022143930368376016,
+      "delta_brier": -0.00013797644753872352
+    }
+  ],
+  "conclusions": [
+    "Logistic Regression \u2014 raw inputs only: \u0394AUC -0.0051 \u00b1 0.0009 (AUC loss), \u0394Brier +0.0024 (worse calibration/accuracy of probabilities)",
+    "Logistic Regression \u2014 class_weight=balanced: \u0394AUC +0.0001 \u00b1 0.0001 (negligible AUC change), \u0394Brier +0.0281 (worse calibration/accuracy of probabilities)",
+    "Logistic Regression \u2014 SMOTE (in-fold): \u0394AUC -0.0011 \u00b1 0.0004 (AUC loss), \u0394Brier +0.0265 (worse calibration/accuracy of probabilities)",
+    "Logistic Regression \u2014 gender included: \u0394AUC -0.0003 \u00b1 0.0001 (negligible AUC change), \u0394Brier +0.0002 (worse calibration/accuracy of probabilities)",
+    "LightGBM \u2014 raw inputs only: \u0394AUC +0.0003 \u00b1 0.0003 (negligible AUC change), \u0394Brier -0.0002 (better calibration/accuracy of probabilities)",
+    "LightGBM \u2014 class_weight=balanced: \u0394AUC -0.0002 \u00b1 0.0002 (negligible AUC change), \u0394Brier +0.0273 (worse calibration/accuracy of probabilities)",
+    "LightGBM \u2014 SMOTE (in-fold): \u0394AUC -0.0029 \u00b1 0.0008 (AUC loss), \u0394Brier +0.0146 (worse calibration/accuracy of probabilities)",
+    "LightGBM \u2014 gender included: \u0394AUC +0.0003 \u00b1 0.0002 (negligible AUC change), \u0394Brier -0.0001 (better calibration/accuracy of probabilities)"
+  ],
+  "seconds": 21.6
+}

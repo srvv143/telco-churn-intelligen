@@ -1,0 +1,20 @@
+{
+  "measured_at": "2026-11-06",
+  "machine": "Linux x86_64, 2 vCPU, Python 3.13.18",
+  "n_requests": 500,
+  "single": {
+    "endpoint": "POST /v1/predict?explain=true",
+    "p50_ms": 20.6451745002596,
+    "p95_ms": 29.786255699764272,
+    "p99_ms": 36.75227873955918,
+    "mean_ms": 21.95327810602066,
+    "server_p50_ms": 19.03,
+    "throughput_rps_sequential": 45.55128373861174
+  },
+  "batch": {
+    "endpoint": "POST /v1/predict/batch?explain=false",
+    "batch_size": 1000,
+    "seconds": 0.08342798800003948,
+    "rows_per_second": 11986.38519245516
+  }
+}

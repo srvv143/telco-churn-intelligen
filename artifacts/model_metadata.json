@@ -1,0 +1,20 @@
+{
+  "model_name": "Logistic Regression",
+  "model_key": "logreg",
+  "version": "4.0.0",
+  "package_version": "4.0.0",
+  "trained_at": "2026-11-06T15:31:14Z",
+  "calibration": "none",
+  "decision_threshold": 0.33,
+  "params": {
+    "C": 0.0745934328572655
+  },
+  "features_excluded": [
+    "gender"
+  ],
+  "n_train": 5634,
+  "test_roc_auc": 0.8496990363998037,
+  "test_pr_auc": 0.6728235931435889,
+  "sklearn_version": "1.9.1",
+  "python_version": "3.13.18"
+}

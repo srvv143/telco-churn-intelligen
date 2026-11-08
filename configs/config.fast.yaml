@@ -1,0 +1,36 @@
+# Fast configuration for CI, unit tests and smoke runs (~1 minute).
+# Inherits everything from config.yaml and overrides the expensive parts.
+extends: config.yaml
+
+cv:
+  n_splits: 3
+  n_repeats: 1
+  tuning_splits: 3
+
+tuning:
+  enabled: true
+  n_trials:
+    logreg: 3
+    lightgbm: 3
+  timeout_seconds: 60
+
+models:
+  candidates: [logreg, lightgbm]
+  ensembles: [soft_voting]
+  ensemble_size: 2
+
+calibration:
+  method: sigmoid
+  cv: 3
+
+evaluation:
+  bootstrap_samples: 100
+
+business:
+  sensitivity:
+    save_rates: [0.2, 0.35]
+    incentive_costs: [40, 80]
+
+explain:
+  background_rows: 50
+  summary_rows: 200
